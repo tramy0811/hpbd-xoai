@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="vi"><!-- <![endif]-->
+<head>
+    <title>Chúc mừng sinh nhật Xoài 🎂</title>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Một món quà sinh nhật nho nhỏ dành riêng cho Xoài">
+    <meta name="robots" content="index, follow"/>
+    <meta name="keywords" content="sinh nhật, chúc mừng sinh nhật">
+    <!-- Strat of Facebook Meta -->
+    <meta property="og:type" content="E-Greeting"/>
+    <meta property="og:image" content="favicon.ico"/>
+    <meta property="og:description" content="Chúc Xoài sinh nhật thật vui vẻ">
+    <!-- End of Facebook Meta Tags -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Coiny&family=Baloo+2:wght@500;700;800&display=swap">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="assets/loading.css">
+    <link rel="stylesheet" type="text/css" href="assets/extra.css">
+    <link rel="stylesheet/less" href="assets/cake.less">
+    <script src="assets/less.min.js"></script>
+    <script src="config.js"></script>
+</head>
+
+<body>
+<div class="loading"></div>
+
+<!-- Màn chờ -->
+<div id="intro">
+    <div id="intro_sky"></div>
+    <div class="intro-moon"></div>
+    <p class="intro-kicker">Có một bất ngờ nho nhỏ</p>
+    <p class="intro-for">dành riêng cho</p>
+    <div class="mango-word intro-name" id="intro_name"></div>
+    <button class="switch" id="intro_switch" aria-label="Bật đèn lên">💡</button>
+    <p class="intro-hint">Chạm vào bóng đèn để bật đèn nhé<small>Nhớ bật âm lượng 🔊</small></p>
+    <div class="flash"></div>
+</div>
+
+<canvas id="fx"></canvas>
+<div id="floaters"></div>
+<div id="hangers" aria-hidden="true"></div>
+<div id="flutter" aria-hidden="true"></div>
+<button id="music_toggle" class="music-toggle" aria-label="Bật/tắt nhạc"><span><i></i><i></i><i></i></span></button>
+<audio class="song" controls loop>
+    <source src="assets/hbd.mp3"></source>
+    Trình duyệt của bạn không phát được nhạc.
+</audio>
+<div class="balloons text-center" id="b1">
+    <h2 style="color:#F2B300;"></h2>
+</div>
+<div class="balloons text-center" id="b2">
+    <h2 style="color:#0719D4;"></h2>
+</div>
+<div class="balloons text-center" id="b3">
+    <h2 style="color:#D14D39;"></h2>
+</div>
+<div class="balloons text-center" id="b4">
+    <h2 style="color:#8FAD00;"></h2>
+</div>
+<div class="balloons text-center" id="b5">
+    <h2 style="color:#8377E4;"></h2>
+</div>
+<div class="balloons text-center" id="b6">
+    <h2 style="color:#99C96A;"></h2>
+</div>
+<div class="balloons text-center" id="b7">
+    <h2 style="color:#20CFB4;"></h2>
+</div>
+
+<img src="assets/Balloon-Border.png" width="100%" class="balloon-border">
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-2 col-xs-2 bulb-holder">
+            <div class="bulb" id="bulb_yellow"></div>
+        </div>
+        <div class="col-md-2 col-xs-2 bulb-holder">
+            <div class="bulb" id="bulb_red"></div>
+        </div>
+        <div class="col-md-2 col-xs-2 bulb-holder">
+            <div class="bulb" id="bulb_blue"></div>
+        </div>
+        <div class="col-md-2 col-xs-2 bulb-holder">
+            <div class="bulb" id="bulb_green"></div>
+        </div>
+        <div class="col-md-2 col-xs-2 bulb-holder">
+            <div class="bulb" id="bulb_pink"></div>
+        </div>
+        <div class="col-md-2 col-xs-2 bulb-holder">
+            <div class="bulb" id="bulb_orange"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="assets/banner.png" class="bannar">
+            <div id="bunting" aria-label="Happy Birthday"></div>
+            <h1 class="mango-word ten-xoai" id="ten_xoai"></h1>
+        </div>
+    </div>
+    <!-- <div class="row message">
+        <div class="col-md-12"><p>Khushbu</p></div>
+    </div> -->
+    <div class="row cake-cover">
+        <div class="col-md-12 texr-center">
+            <div class="cake">
+                <!-- Bánh mousse vàng bơ, đai socola trắng uốn sóng, 2 con bướm -->
+                <svg class="cake-art" viewBox="0 0 400 340" aria-label="Bánh sinh nhật">
+                    <defs>
+                        <linearGradient id="gBody" x1="0" x2="1">
+                            <stop offset="0" stop-color="#D3CF8A"/><stop offset=".22" stop-color="#E7E4AA"/>
+                            <stop offset=".5" stop-color="#F1EFC3"/><stop offset=".8" stop-color="#E2DFA2"/><stop offset="1" stop-color="#C9C57F"/>
+                        </linearGradient>
+                        <radialGradient id="gTop" cx=".42" cy=".38" r=".75">
+                            <stop offset="0" stop-color="#F4F3CF"/><stop offset=".6" stop-color="#E8E7B1"/><stop offset="1" stop-color="#D6D598"/>
+                        </radialGradient>
+                        <linearGradient id="gBand" x1="0" x2="1">
+                            <stop offset="0" stop-color="#E0D48C"/><stop offset=".25" stop-color="#F2E9B2"/>
+                            <stop offset=".55" stop-color="#F7F0C4"/><stop offset=".85" stop-color="#EBE0A3"/><stop offset="1" stop-color="#D8CB82"/>
+                        </linearGradient>
+                        <linearGradient id="gRingOut" x1="0" x2="1">
+                            <stop offset="0" stop-color="#EADF9F"/><stop offset=".45" stop-color="#F9F2CB"/><stop offset="1" stop-color="#E4D893"/>
+                        </linearGradient>
+                        <linearGradient id="gRingIn" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#F3EBBC"/><stop offset="1" stop-color="#DCD196"/>
+                        </linearGradient>
+                        <radialGradient id="gBall" cx=".38" cy=".32" r=".8">
+                            <stop offset="0" stop-color="#FFFFFF"/><stop offset=".7" stop-color="#F6F3E8"/><stop offset="1" stop-color="#E2DCC8"/>
+                        </radialGradient>
+                        <linearGradient id="gPink" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#FBD9CF"/><stop offset=".6" stop-color="#F6BDAE"/><stop offset="1" stop-color="#F0A595"/>
+                        </linearGradient>
+                        <linearGradient id="gYel" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#FBEDBE"/><stop offset=".6" stop-color="#F3DD9A"/><stop offset="1" stop-color="#EACB7C"/>
+                        </linearGradient>
+                        <pattern id="pDots" width="9" height="8" patternUnits="userSpaceOnUse">
+                            <circle cx="1.5" cy="2" r=".8" fill="#fff" opacity=".4"/>
+                            <circle cx="6" cy="5.5" r=".6" fill="#BFB06A" opacity=".18"/>
+                            <circle cx="4" cy="1" r=".5" fill="#fff" opacity=".3"/>
+                        </pattern>
+                        <pattern id="pStripe" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+                            <rect width="6" height="6" fill="#FFF8EE"/><rect width="2.4" height="6" fill="#F6C1B3"/>
+                        </pattern>
+                        <filter id="fBlur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+                        <filter id="fBlurS" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+                        <!-- Con bướm: gốc toạ độ ở thân, cánh hướng lên -->
+                        <g id="bfly">
+                            <ellipse cx="1" cy="15" rx="13" ry="10.5" fill="url(#gBall)"/>
+                            <path d="M0 4 C-10 -8 -44 -16 -55 0 C-61 16 -30 27 0 10Z" fill="url(#gPink)"/>
+                            <path d="M0 5 C-10 -3 -36 -8 -43 3 C-46 13 -22 19 0 9Z" fill="url(#gYel)"/>
+                            <path d="M3 4 C14 -8 48 -14 57 2 C61 18 30 27 3 10Z" fill="url(#gPink)"/>
+                            <path d="M3 5 C14 -3 38 -6 45 4 C47 14 24 19 3 9Z" fill="url(#gYel)"/>
+                            <path d="M0 2 C-22 -10 -42 -50 -31 -68 C-20 -84 3 -52 0 2Z" fill="url(#gPink)"/>
+                            <path d="M1 0 C-17 -12 -32 -45 -24 -60 C-15 -72 4 -42 1 0Z" fill="url(#gYel)"/>
+                            <path d="M4 1 C22 -12 44 -42 38 -61 C32 -77 6 -50 4 1Z" fill="none" stroke="url(#gPink)" stroke-width="5" stroke-linejoin="round"/>
+                            <path d="M3 0 C16 -12 31 -38 27 -51 C22 -61 5 -38 3 0Z" fill="url(#gYel)"/>
+                            <g fill="#fff" opacity=".8">
+                                <circle cx="-15" cy="-38" r=".8"/><circle cx="-11" cy="-50" r=".6"/><circle cx="-20" cy="-56" r=".7"/><circle cx="-8" cy="-24" r=".6"/>
+                                <circle cx="15" cy="-30" r=".8"/><circle cx="20" cy="-42" r=".6"/><circle cx="-32" cy="6" r=".7"/><circle cx="34" cy="7" r=".7"/><circle cx="-22" cy="12" r=".6"/>
+                            </g>
+                            <g fill="#FFFDF8" stroke="#E4DCC8" stroke-width=".6">
+                                <circle cx="1" cy="2" r="2.6"/><circle cx="1.6" cy="-3.6" r="2.6"/><circle cx="2.2" cy="-9.2" r="2.6"/><circle cx="2.8" cy="-14.8" r="2.5"/>
+                            </g>
+                        </g>
+                        <g id="candle">
+                            <rect x="-3.5" y="-42" width="7" height="42" rx="2.5" fill="url(#pStripe)"/>
+                            <rect x="-3.5" y="-42" width="2" height="42" rx="1" fill="#fff" opacity=".5"/>
+                            <path d="M0 -42 v-7" stroke="#5a4636" stroke-width="1.4" stroke-linecap="round"/>
+                        </g>
+                    </defs>
+
+                    <!-- đế bìa trắng -->
+                    <ellipse cx="200" cy="318" rx="196" ry="14" fill="#5d5a4a" opacity=".12" filter="url(#fBlur)"/>
+                    <polygon points="46,92 354,92 398,306 2,306" fill="#FCFCFB" stroke="#ECECEA"/>
+                    <polygon points="2,306 398,306 398,316 2,316" fill="#E7E7E4"/>
+
+                    <!-- bóng bánh -->
+                    <ellipse cx="208" cy="248" rx="136" ry="38" fill="#7d7650" opacity=".22" filter="url(#fBlur)"/>
+
+                    <!-- thân + mặt bánh -->
+                    <path d="M80 150 L80 238 A120 40 0 0 0 320 238 L320 150 Z" fill="url(#gBody)"/>
+                    <ellipse cx="200" cy="150" rx="120" ry="40" fill="url(#gTop)"/>
+                    <path d="M84 158 A118 38 0 0 0 316 158" stroke="#FBF9DD" stroke-width="3" fill="none" opacity=".7"/>
+                    <ellipse cx="140" cy="176" rx="34" ry="5" fill="#fff" opacity=".28"/>
+
+                    <!-- đai socola trắng uốn sóng -->
+                    <path d="M76 176 C104 198 136 170 172 186 S236 208 268 190 S308 188 324 198 L324 240 A124 42 0 0 1 76 240 Z" fill="url(#gBand)"/>
+                    <path d="M76 176 C104 198 136 170 172 186 S236 208 268 190 S308 188 324 198 L324 240 A124 42 0 0 1 76 240 Z" fill="url(#pDots)"/>
+                    <path d="M76 176 C104 198 136 170 172 186 S236 208 268 190 S308 188 324 198" stroke="#FCF6D6" stroke-width="2.5" fill="none"/>
+
+                    <!-- vòng socola uốn sóng trên mặt bánh -->
+                    <ellipse cx="216" cy="150" rx="80" ry="22" fill="#A89F62" opacity=".28" filter="url(#fBlurS)"/>
+                    <path d="M134 142 A78 24 0 0 1 290 142 L290 121 C276 95 244 86 214 92 S154 99 134 120 Z" fill="url(#gRingIn)"/>
+                    <path d="M290 121 C276 95 244 86 214 92 S154 99 134 120" stroke="#FFF8DA" stroke-width="2" fill="none"/>
+
+                    <!-- nến -->
+
+                    <!-- bướm bên trái (trong vòng) -->
+                    <ellipse cx="142" cy="139" rx="16" ry="4" fill="#9a915a" opacity=".3" filter="url(#fBlurS)"/>
+                    <use href="#bfly" transform="translate(140 116) scale(1.22) rotate(-10)"/>
+
+                    <path d="M134 142 A78 24 0 0 0 290 142 L290 121 C283 146 252 156 222 149 S168 153 150 139 S136 126 134 120 Z" fill="url(#gRingOut)"/>
+                    <path d="M290 121 C283 146 252 156 222 149 S168 153 150 139 S136 126 134 120" stroke="#FFFAE0" stroke-width="2.4" fill="none"/>
+
+                    <!-- nến số 23 -->
+                    <g class="num-candles">
+                        <path d="M203 100 v-9" stroke="#5a4636" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M244 98 v-9" stroke="#5a4636" stroke-width="1.8" stroke-linecap="round"/>
+                        <text x="203" y="148" class="num-candle">2</text>
+                        <text x="244" y="146" class="num-candle">3</text>
+                    </g>
+
+                    <!-- bướm bên phải -->
+                    <ellipse cx="292" cy="158" rx="15" ry="4" fill="#9a915a" opacity=".3" filter="url(#fBlurS)"/>
+                    <use href="#bfly" transform="translate(292 138) scale(1.02) rotate(20)"/>
+                </svg>
+                <!-- ngọn lửa (HTML để fadeIn/fadeOut) -->
+                <div class="candle-flames">
+                    <span class="flame" style="left:50.75%;top:27%"></span>
+                    <span class="flame" style="left:61%;top:26.4%"></span>
+                    <span class="smoke" style="left:50.75%;top:27%"></span>
+                    <span class="smoke" style="left:61%;top:26.4%"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row message">
+        <div class="col-md-12" id="texts-container">
+        </div>
+    </div>
+    <div class="navbar navbar-fixed-bottom">
+        <div class="row">
+            <div class="col-md-6 text-center col-md-offset-3">
+                <button class="btn btn-primary" id="turn_on">Bấm vào đây nè</button>
+                <button class="btn btn-primary" id="play">Bật nhạc lên</button>
+                <button class="btn btn-primary" id="bannar_coming">Trang trí chút nhé</button>
+                <button class="btn btn-primary" id="balloons_flying">Thả bóng bay</button>
+                <button class="btn btn-primary" id="cake_fadein">Bánh kem đâu?</button>
+                <button class="btn btn-primary" id="light_candle">Thắp nến thôi</button>
+                <p class="blow-hint" id="blow_hint">Nhắm mắt ước một điều, rồi thổi vào micro (hoặc chạm vào ngọn nến) nhé 🕯️</p>
+                <button class="btn btn-primary" id="blow_candle">Ước rồi thổi nến nha</button>
+                <button class="btn btn-primary" id="wish_message">Chúc mừng sinh nhật</button>
+                <button class="btn btn-primary" id="story">Có vài lời muốn nói</button>
+                <!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
+                <text class="love_text" id="love_text" style="display: none;font-family: 'Coiny', cursive;font-size: 28px;color: #FF7A1A;"></text>
+                <button class="btn btn-primary" id="open_letter">Còn một lá thư nữa</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="letter-overlay" id="letter_overlay">
+    <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-paper"></div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="env-seal">🥭</div>
+    </div>
+    <article class="letter" id="letter">
+        <h2 id="letter_title"></h2>
+        <div id="letter_body"></div>
+        <p class="signature" id="letter_sign"></p>
+        <button class="btn btn-primary" id="close_letter">Đóng thiệp 💛</button>
+    </article>
+</div>
+</body>
+<script src="assets/jquery.min.js"></script>
+<script src="./assets/bootstrap.min.js"></script>
+<script src="assets/effect.js"></script>
+<script src="assets/extra.js"></script>
+
+<script src="custom.js"></script>
+
+</html>
