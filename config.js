@@ -31,6 +31,6 @@ var config = {
 
     // Thiệp — nguyên văn lời chúc
     letterTitle: "",
-    letter: "Chúc mừng sinh nhật em , sweet 23+ nhéeeee . Chúc em tuổi mới luôn xinh đẹp , hạnh phúc  , bình an và đạt được mọi điều mong muốn nhé 🫶 Hi vọng em sẽ thích quà chị tặng hehee",
+    letter: "Chúc mừng sinh nhật em , sweet 23+ nhéeeee . Chúc em tuổi mới luôn xinh đẹp , hạnh phúc  , bình an và đạt được mọi điều mong muốn nhé 🫶",
     signature: "Trà My",
 };

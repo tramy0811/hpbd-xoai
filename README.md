@@ -1,27 +1,14 @@
-# Chúc mừng sinh nhật Xoài 🎂
+﻿# Sinh nhật Xoài cùng Mango
 
-Phát triển tiếp từ https://github.com/calebman/girlfriend-gift-collection/tree/master/birth-want-to-say (gốc: https://github.com/AJLoveChina/birthday).
+Mở cửa cùng Mango → mở 3 món quà → ước nguyện và thổi nến bằng cách chạm → đọc thiệp → chơi lại.
 
-## Luồng
-Bật đèn → Bật nhạc → Trang trí (banner + tên **Xoài**) → Thả bóng bay → Bánh kem → Thắp nến
-→ **Thổi nến** (thổi vào micro hoặc chạm vào bánh) → pháo hoa + confetti
-→ Chúc mừng sinh nhật (bóng xếp chữ ♥ XOÀI ♥ !) → Lời nhắn lần lượt
-→ Màn kết (pháo hoa, tim & xoài bay) → **Mở lá thư**.
+Chạy tại thư mục này: `python -m http.server 8086 --bind 127.0.0.1`, mở http://127.0.0.1:8086.
 
-## Sửa nội dung: chỉ cần sửa `config.js`
-- `name`: tên hiện dưới banner, trên bánh và trong thư
-- `texts`: các lời nhắn; `imgs`: ảnh kèm từng câu (bỏ ảnh vào `imgs/`)
-- `desc`: chữ trên các nút
-- `balloonTexts`: 7 chữ trên 7 quả bóng
-- `loveText`: dòng chữ cuối
-- `letterTitle`, `letter`, `signature`: lá thư (cách một dòng trống để tách đoạn)
-- Nhạc: thay file `assets/hbd.mp3` (giữ nguyên tên)
+Sửa tên, lời chúc và người gửi trong `config.js`. Nhạc ở `assets/hbd.mp3`, có nút bật/tắt. Không cần micro.
 
-## Các file đã thêm/sửa so với bản gốc
-- `assets/extra.js`, `assets/extra.css`: pháo hoa, confetti, thổi nến, tên, lá thư, nút nhạc, giao diện điện thoại
-- `assets/effect.js`: thêm bước thổi nến, bóng bay vừa màn hình, lời nhắn kết thúc đúng lúc
+Giao diện: `index.html`, `assets/mango-birthday.css`, `assets/mango-birthday.js`. Mascot trong `assets/mango/`. Ảnh thiết kế nhân vật: `assets/mango/mango-birthday-character-sheet.png`.
 
-## Chạy
-`npx serve D:\HPBD` rồi mở link localhost. Micro chỉ hoạt động trên `localhost` hoặc `https://`.
+Bản HTML trước khi sửa: `index-before-mango.html`. Các tài nguyên cũ vẫn còn để dùng lại.
 
-`_ban-thu/` là bản làm mới thử nghiệm (không dùng).
+## Hoạt cảnh Mango
+Bản hiện tại sử dụng `assets/mango-animation.js` và `assets/mango-animation.css`. Căn phòng là lớp nền riêng; Mango dùng sáu tư thế trong sprite sheet trong `assets/mango/mango-action-sprites.png`. Cửa, quà, bánh và nến là các lớp chuyển động độc lập. Nút hành động khóa trong khi nhân vật đang thực hiện để tránh bấm chồng. Có hỗ trợ giảm chuyển động theo cài đặt hệ thống.
